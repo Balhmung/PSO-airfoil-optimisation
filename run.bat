@@ -1,0 +1,1 @@
+(echo load airfoil.txt && echo naca_start && echo ppar && echo N 100 && echo. && echo. && echo oper && echo visc 1e6 && echo iter 50 && echo alfa 3) | xfoil > out.txt

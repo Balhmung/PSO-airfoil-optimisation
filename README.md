@@ -135,6 +135,7 @@ The script generates a dual-plot:
 
 ---
 
-*No RAM had been bullied in the making of this project.*
+*No RAM has been bullied in the making of this project.*
+
 
 

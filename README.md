@@ -69,8 +69,14 @@ $$ y(x) = C(x) \cdot S(x) + x \cdot \Delta z_{te} $$
 The core algorithm is a custom PSO implementation designed for the noisy XFOIL objective landscape.
 
 **Update Equations:**
-$$ v_{i}^{t+1} = w v_{i}^{t} + c_1 r_1 (p_{best,i} - x_{i}^{t}) + c_2 r_2 (g_{best} - x_{i}^{t}) $$
-$$ x_{i}^{t+1} = x_{i}^{t} + v_{i}^{t+1} $$
+
+$$
+v_{i}^{t+1} = w v_{i}^{t} + c_1 r_1 (p_{best,i} - x_{i}^{t}) + c_2 r_2 (g_{best} - x_{i}^{t})
+$$
+
+$$
+x_{i}^{t+1} = x_{i}^{t} + v_{i}^{t+1}
+$$
 
 **Parameter Study (`PSO_Parameter_Study.m`):**
 A dedicated script compares different tuning strategies:
@@ -130,3 +136,4 @@ The script generates a dual-plot:
 ---
 
 *No RAM had been bullied in the making of this project *
+

@@ -1,4 +1,4 @@
-# Airfoil Shape Optimisation using PSO (Folder B)
+# Airfoil Shape Optimisation using PSO
 
 ![Project Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Language](https://img.shields.io/badge/language-MATLAB-blue)
@@ -57,9 +57,7 @@ Where:
 ## Airfoil Parameterisation (CST)
 
 The Class-Shape Transformation (CST) method is used to represent the airfoil geometry.
-$$
-y(x) = C(x) \cdot S(x) + x \cdot \Delta z_{te}
-$$
+$$ y(x) = C(x) \cdot S(x) + x \cdot \Delta z_{te} $$
 -   **Class Function:** $C(x) = x^{0.5} (1-x)^{1.0}$ (Round nose, sharp tail).
 -   **Shape Function:** Using 3rd order Bernstein Polynomials, resulting in **6 design variables** (weights).
 
@@ -71,12 +69,8 @@ $$
 The core algorithm is a custom PSO implementation designed for the noisy XFOIL objective landscape.
 
 **Update Equations:**
-$$
-v_{i}^{t+1} = w v_{i}^{t} + c_1 r_1 (p_{best,i} - x_{i}^{t}) + c_2 r_2 (g_{best} - x_{i}^{t})
-$$
-$$
-x_{i}^{t+1} = x_{i}^{t} + v_{i}^{t+1}
-$$
+$$ v_{i}^{t+1} = w v_{i}^{t} + c_1 r_1 (p_{best,i} - x_{i}^{t}) + c_2 r_2 (g_{best} - x_{i}^{t}) $$
+$$ x_{i}^{t+1} = x_{i}^{t} + v_{i}^{t+1} $$
 
 **Parameter Study (`PSO_Parameter_Study.m`):**
 A dedicated script compares different tuning strategies:
@@ -88,7 +82,7 @@ A dedicated script compares different tuning strategies:
 
 ## Software Architecture
 
-The implementation is contained entirely within **Folder B**:
+The implementation is self-contained in this repository:
 
 | File | Description |
 | :--- | :--- |
@@ -106,23 +100,17 @@ The implementation is contained entirely within **Folder B**:
 
 ### Prerequisites
 -   **MATLAB** with Optimization Toolbox.
--   **XFOIL** executable (`xfoil.exe`) must be present in the `B/` folder.
+-   **XFOIL** executable (`xfoil.exe`) must be present in the root folder.
 -   Windows Environment (due to `run.bat` dependency).
 
 ### 1. Run the Main Optimisation
 To perform a single optimisation run with visualisation:
-```matlab
-cd B
 PSO_Airfoil_Optimisation
-```
 *Output:* Real-time plots of $C_d/C_l$, Best $C_L$, Best $C_D$.
 
 ### 2. Run Parameter Study
 To benchmark different PSO settings:
-```matlab
-cd B
 PSO_Parameter_Study
-```
 *Output:* Comparison plot of convergence rates for different swarm behaviors.
 
 ---
@@ -140,3 +128,5 @@ The script generates a dual-plot:
 2.  **Bottom:** Evolution of Lift ($C_L$) and Drag ($C_D$) coefficients for the best candidate.
 
 ---
+
+*No RAM had been bullied in the making of this project *
